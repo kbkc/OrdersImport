@@ -19,23 +19,21 @@ namespace Rest02
 
             // ---- Read cfg file --- //
             ReadCfg.ProcXml();
-            Dictionary<string,string> idl = new Dictionary<string,string>();
-            string k="";
-            string v="";
 
+            Dictionary<string, string> idl = new Dictionary<string, string>();
+            string k = "";
+            string v = "";
 
+            /*
+                        public static DateTime UnixTimeStampToDateTime( double unixTimeStamp )
+            {
+                // Unix timestamp is seconds past epoch
+                System.DateTime dtDateTime = new DateTime(1970,1,1,0,0,0,0,System.DateTimeKind.Utc);
+                dtDateTime = dtDateTime.AddSeconds( unixTimeStamp ).ToLocalTime();
+                return dtDateTime;
+            }
 
-
-/*
-            public static DateTime UnixTimeStampToDateTime( double unixTimeStamp )
-{
-    // Unix timestamp is seconds past epoch
-    System.DateTime dtDateTime = new DateTime(1970,1,1,0,0,0,0,System.DateTimeKind.Utc);
-    dtDateTime = dtDateTime.AddSeconds( unixTimeStamp ).ToLocalTime();
-    return dtDateTime;
-}
-
- */
+             */
 
             //System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
 
@@ -46,53 +44,36 @@ namespace Rest02
 
             //return;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             foreach (ConnectionNode aa in ReadCfg.nodes_list)
             {
-            try
-            {
-
-               Console.WriteLine("------- " + aa.label + " -------");
-
-                // main block
-               dbProc.MysqlConn(aa);
-                
-                // write order to .csv
-                if (aa.orders.Count() > 0)
+                try
                 {
-                    foreach (Order ord in aa.orders)
+                    Console.WriteLine("------- " + aa.label + " -------");
+
+                    // main block
+                    dbProc.MysqlConn(aa);
+
+                    // write order to .csv
+                    if (aa.orders.Count() > 0)
                     {
-
+                        foreach (Order ord in aa.orders)
+                        {
                             File.WriteAllText(ord.order_file_name, ord.csv_text, Encoding.GetEncoding(ord.codepage)); //utf8 65001,  koi 866
-                        Console.WriteLine("Order #" + ord.order_id + " done.\n");
-                        k = aa.label;
-                        v = ord.order_id;
+                            Console.WriteLine("Order #" + ord.order_id + " done.\n");
+                            k = aa.label;
+                            v = ord.order_id;
+                        }
+                        idl.Add((string)k, (string)v);
                     }
-                    idl.Add((string)k, (string)v);
-
+                    else Console.WriteLine("orders :" + aa.orders.Count().ToString());
+                    // end  write order to .csv
                 }
-                else Console.WriteLine("orders :" + aa.orders.Count().ToString());
-                // end  write order to .csv
+                catch (Exception ex)
+                {
+                    ReadCfg.error_flag = true;
+                    ReadCfg.mail_message += "* * * \n Connection Exception error:\n " + ex.ToString() + "\n" + aa.conn_str.ToString() + "\n * * *\n";
+                }
             }
-            catch (Exception ex)
-            {
-                ReadCfg.error_flag = true;
-                ReadCfg.mail_message += "* * * \n Connection Exception error:\n " + ex.ToString() + "\n" + aa.conn_str.ToString() + "\n * * *\n";
-            }
-           }
             Console.WriteLine("\n");
             Console.WriteLine(("").PadRight(35, '-'));
             // ---------------- WRITE XML ----------------//
@@ -100,6 +81,7 @@ namespace Rest02
             if (idl.Count() > 0)
             {
                 XDocument xml = XDocument.Load(ReadCfg.CfgFileName);
+
                 foreach (KeyValuePair<string, string> kv in idl)
                 {
                     Console.WriteLine(kv.Key + ":" + kv.Value);
@@ -112,7 +94,6 @@ namespace Rest02
                 xml.Save(ReadCfg.CfgFileName);
             }
             // ---------- end of  replace id ----------- //
-
 
             // -------------------------------- MAIL SEND BLOCK -------------------------------------------
 
@@ -154,7 +135,7 @@ namespace Rest02
             } // ----------------------------------------------------------- END MAIL SEND BLOCK
 
             Console.WriteLine("...Bye");
-           // Console.ReadKey();
+            // Console.ReadKey();
         }
     }
 }
