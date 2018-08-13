@@ -1,0 +1,15 @@
+d:\SkyDriveMike\Csharp\Rest02\Rest02\bin\Debug\Rest02.exe.config
+C:\Users\mike\SkyDrive\Csharp\Rest02\Rest02\bin\Debug\Rest02.exe.config
+C:\Users\mike\SkyDrive\Csharp\Rest02\Rest02\bin\Debug\Rest02.exe
+C:\Users\mike\SkyDrive\Csharp\Rest02\Rest02\bin\Debug\Rest02.pdb
+C:\Users\mike\SkyDrive\Csharp\Rest02\Rest02\obj\Debug\Rest02.csprojResolveAssemblyReference.cache
+C:\Users\mike\SkyDrive\Csharp\Rest02\Rest02\obj\Debug\Rest02.exe
+C:\Users\mike\SkyDrive\Csharp\Rest02\Rest02\obj\Debug\Rest02.pdb
+D:\SkyDrive\Csharp\Rest02\Rest02\bin\Debug\Rest02.exe.config
+D:\SkyDrive\Csharp\Rest02\Rest02\obj\Debug\Rest02.exe
+D:\SkyDrive\Csharp\Rest02\Rest02\obj\Debug\Rest02.csprojResolveAssemblyReference.cache
+d:\SkyDriveMike\Csharp\Rest02\Rest02\obj\Debug\Rest02.exe
+d:\SkyDriveMike\Csharp\Rest02\Rest02\obj\Debug\Rest02.pdb
+d:\SkyDriveMike\Csharp\Rest02\Rest02\bin\Debug\Rest02.exe
+d:\SkyDriveMike\Csharp\Rest02\Rest02\bin\Debug\Rest02.pdb
+d:\SkyDriveMike\Csharp\Rest02\Rest02\obj\Debug\Rest02.csprojResolveAssemblyReference.cache

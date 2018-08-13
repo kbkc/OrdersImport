@@ -1,0 +1,3 @@
+C:\Users\mike\SkyDrive\Csharp\Rest02\Rest02\bin\Debug\Rest02.exe.config
+C:\Users\mike\SkyDrive\Csharp\Rest02\Rest02\obj\Debug\Rest02.exe
+C:\Users\mike\SkyDrive\Csharp\Rest02\Rest02\obj\Debug\Rest02.csprojResolveAssemblyReference.cache

@@ -1,0 +1,37 @@
+SELECT s.* 
+from phpshop_orders as s
+WHERE s.id = 13
+
+
+
+
+
+tables:
+phpshop(nfu)
+phpshop_orders
+
+
+
+
+shoper.pl
+
+SELECT s.*
+FROM orders_search AS s
+WHERE s.order_id >=5395;
+SELECT p.*
+FROM orders_products as p 
+WHERE p.order_id >=5395;
+-- SELECT s.*,p.* FROM orders_search as s INNER JOIN orders_products as p on s.order_id = p.order_id WHERE s.order_id >=5395;
+
+
+
+reforma.ua
+joomshoping
+
+SELECT s.*
+FROM joom3_jshopping_orders AS s
+WHERE s.order_id >=42;
+SELECT p.*
+FROM joom3_jshopping_order_item as p 
+WHERE p.order_id >=42;
+-- SELECT s.*,p.* FROM joom3_jshopping_orders as s INNER JOIN joom3_jshopping_order_item as p on s.order_id = p.order_id WHERE s.order_id >=42;

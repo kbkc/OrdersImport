@@ -1,0 +1,12 @@
+C:\Users\mposo\Documents\MEGAsync\_Dev\_working_projects\OrdersImport\OrdersImport\bin\Debug\OrdersImport.exe.config
+C:\Users\mposo\Documents\MEGAsync\_Dev\_working_projects\OrdersImport\OrdersImport\bin\Debug\OrdersImport.exe
+C:\Users\mposo\Documents\MEGAsync\_Dev\_working_projects\OrdersImport\OrdersImport\obj\Debug\OrdersImport.exe
+C:\Users\mposo\Documents\MEGAsync\_Dev\_working_projects\OrdersImport\OrdersImport\obj\Debug\OrdersImport.csprojResolveAssemblyReference.cache
+C:\Users\mposo\Documents\MEGAsync\_Dev\_working_projects\OrdersImport\OrdersImport\obj\Debug\OrdersImport.csproj.CoreCompileInputs.cache
+C:\Users\mposo\Documents\MEGAsync\_Dev\_working_projects\OrdersImport\OrdersImport\bin\Debug\Microsoft.CSharp.dll
+C:\Users\mposo\Documents\MEGAsync\_Dev\_working_projects\OrdersImport\OrdersImport\bin\Debug\System.Data.DataSetExtensions.dll
+C:\Users\mposo\Documents\MEGAsync\_Dev\_working_projects\OrdersImport\OrdersImport\bin\Debug\System.Data.dll
+C:\Users\mposo\Documents\MEGAsync\_Dev\_working_projects\OrdersImport\OrdersImport\bin\Debug\System.dll
+C:\Users\mposo\Documents\MEGAsync\_Dev\_working_projects\OrdersImport\OrdersImport\bin\Debug\System.Xml.dll
+C:\Users\mposo\Documents\MEGAsync\_Dev\_working_projects\OrdersImport\OrdersImport\bin\Debug\System.Xml.Linq.dll
+C:\Users\mposo\Documents\MEGAsync\_Dev\_working_projects\OrdersImport\OrdersImport\bin\Debug\System.Windows.Forms.dll

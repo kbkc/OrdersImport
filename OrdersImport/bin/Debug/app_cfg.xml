@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DBS>
+  <use_mail_node>maildatassl</use_mail_node>
+  <show_addon_messages>false</show_addon_messages>
+  <send_mail_on_error>true</send_mail_on_error>
+  <send_mail_on_success>false</send_mail_on_success>
+  <send_mail_on_error_to>mposohov@gmail.com</send_mail_on_error_to>
+  <csv_out_dir>\\itcloud.com.ua\reforma\Orders</csv_out_dir>
+  <!--
+ <csv_out_dir>\\itcloud.com.ua\reforma\Orders</csv_out_dir>
+  <csv_out_dir>D:\Bases_1C\Reforma\orders</csv_out_dir>
+   -->
+  <!-- <dbconn>
+    <label>NfuRu</label>
+    <addr>db2.unlim.com</addr>
+    <dbname>u2474_nfuru</dbname>
+    <user>u2474</user>
+    <pass>FRDCOmozsz3e</pass>
+    <query_id>1524</query_id>
+    <query_01>SELECT s.* from phpshop_orders as s WHERE s.id &gt; query_id ORDER BY s.id ASC</query_01>
+    <query_02>ss</query_02>
+    <codepage>1251</codepage>
+  </dbconn>
+  -->
+  <dbconn>
+    <label>NfuRuOC</label>
+    <addr>192.254.233.102</addr>
+    <dbname>refshop_nfuru</dbname>
+    <user>refshop_nfuru</user>
+    <pass>_M{4CVH$y5+G</pass>
+    <query_id>272</query_id>
+    <query_01>
+      SELECT s.order_id,CONCAT(s.invoice_prefix,'_',s.order_id) AS num
+      ,DATE_FORMAT(s.date_added,'%d.%m.%Y %T') As date
+      ,s.email
+      ,CONCAT(s.payment_lastname,' ',s.payment_firstname) AS `name`
+      ,s.payment_company AS firm
+      ,s.telephone AS phone
+      ,s.payment_method AS paytype
+      ,s.total AS sum
+      ,'' as discount
+      ,'nfu-oh.ru' as shopsite
+      ,s.currency_code as valute
+      FROM oc_order AS s
+      WHERE s.order_id &gt; query_id ORDER BY s.order_id ASC
+    </query_01>
+    <query_02>
+      SELECT pp.sku AS art, rr.`name`, rr.quantity AS qtty ,rr.total AS sum
+      FROM oc_order_product AS rr
+      INNER JOIN  oc_product  AS pp ON pp.product_id = rr.product_id
+      WHERE rr.order_id =
+    </query_02>
+    <codepage>1251</codepage>
+  </dbconn>
+  <dbconn>
+    <label>NfuUa</label>
+    <addr>192.254.233.102</addr>
+    <dbname>refshop_nfu</dbname>
+    <user>refshop_nfu</user>
+    <pass>nfu*5=15</pass>
+    <query_id>1776</query_id>
+    <query_01>SELECT s.* from phpshop_orders as s WHERE s.id &gt; query_id ORDER BY s.id ASC</query_01>
+    <query_02>ss</query_02>
+    <codepage>1251</codepage>
+  </dbconn>
+  <!-- 
+  <dbconn>
+    <label>ReformaPl</label>
+    <addr>109.73.232.148</addr>
+    <dbname>c1stcoll_refpl</dbname>
+    <user>c1stcoll_refpl</user>
+    <pass>Ref*5=15</pass>
+    <query_id>11364</query_id>
+    <query_01>SELECT s.order_id,s.date,s.email,CONCAT(u.firstname," ",u.lastname) as sname,u.company_name,u.phone,"oplata",s.sum,uu.discount,"reformnails.pl","zl"
+FROM orders AS s
+INNER JOIN orders_search as ss ON s.order_id = ss.order_id
+INNER JOIN user_address_book as u on IFNULL(s.user_id,2) = u.user_id
+INNER JOIN user_info as uu on IFNULL(s.user_id,2) = uu.user_id
+WHERE s.order_id &gt;query_id  and u.`default` = 1
+ORDER BY s.order_id ASC;
+</query_01>
+    <query_02>SELECT p.`code`,p.`name`,p.quantity,p.price*p.quantity as summ
+FROM orders_products as p WHERE p.order_id = </query_02>
+    <codepage>65001</codepage>
+  </dbconn>
+-->
+  <!--
+  <dbconn>
+    <label>ReformaCom</label>
+    <addr>109.73.232.148</addr>
+    <dbname>c1stcoll_refcom</dbname>
+    <user>c1stcoll_refcom</user>
+    <pass>pio+ner=6</pass>
+    <q_id>99999999</qu_id> 
+    <query_id>33</query_id>
+    <query_01>SELECT s.order_id,s.date,s.email,CONCAT(u.firstname," ",u.lastname) as sname,u.company_name,u.phone,"oplata",s.sum,uu.discount,"reformnails.com","zl"
+FROM orders AS s
+INNER JOIN orders_search as ss ON s.order_id = ss.order_id
+INNER JOIN user_address_book as u on IFNULL(s.user_id,2) = u.user_id
+INNER JOIN user_info as uu on IFNULL(s.user_id,2) = uu.user_id
+WHERE s.order_id &gt;query_id  and u.`default` = 1
+ORDER BY s.order_id ASC;
+</query_01>
+    <query_02>SELECT p.`code`,p.`name`,p.quantity,p.price*p.quantity as summ
+FROM orders_products as p WHERE p.order_id = </query_02>
+    <codepage>65001</codepage>
+  </dbconn>
+-->
+  <dbconn>
+    <label>ReformaUA</label>
+    <addr>209.182.205.163</addr>
+    <dbname>reform27_ref_js_ua</dbname>
+    <user>reform27_ref_js_ua</user>
+    <pass>G1!mL8QGPTEng</pass>
+    <!-- <q_id>4399</qu_id> -->
+    <query_id>14173</query_id>
+    <query_01>SELECT s.*,"reforma.ua" FROM joom3_jshopping_orders AS s WHERE s.order_id &gt; query_id ORDER BY s.order_id ASC</query_01>
+    <query_02>SELECT 
+	p.order_item_id, p.order_id, p.product_id,
+    p.product_ean, p.product_name, p.product_quantity,
+    p.product_item_price * p.product_quantity 
+	FROM joom3_jshopping_order_item as p WHERE p.order_id =</query_02>
+    <codepage>1251</codepage>
+  </dbconn>
+  <maildata>
+    <pop>mail.reformnails.com</pop>
+    <smtp>mail.reformnails.com</smtp>
+    <pop_port>110</pop_port>
+    <smtp_port>25</smtp_port>
+    <user>mp@reformnails.com</user>
+    <pass>23751j</pass>
+    <enablessl>false</enablessl>
+  </maildata>
+  <maildatassl>
+    <pop>mail.reformnails.com</pop>
+    <smtp>mail.reformnails.com</smtp>
+    <pop_port>995</pop_port>
+    <smtp_port>587</smtp_port>
+    <user>mp@reformnails.com</user>
+    <pass>23751j</pass>
+    <enablessl>true</enablessl>
+  </maildatassl>
+</DBS>
